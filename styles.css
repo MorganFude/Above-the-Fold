@@ -19,6 +19,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
 .logo {
@@ -27,28 +28,13 @@ header {
     min-height: 10px;
     margin: 20px;
 }
-
+.hamburger-menu {
+    width: 50px;
+    min-height: 40px;
+    margin: 15px;
+}
 .quicklinks {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-}
-
-.link {
-    margin-right: 15px;
-}
-
-/* buttons */
-.swag {
-    width: 90px;
-    border-radius: 0;
-    background-color: #ffffff;
-    border-top: 0px solid #000000;
-    border-bottom: 0px solid #000000;
-    border-left: 5px solid #000000;
-    border-right: 0px solid #000000;
-    height: 70px;
-    margin: 0;
+    display: none;
 }
 
 .findstudent{
@@ -59,28 +45,41 @@ header {
     margin: 0;
     color: #ffffff;
 }
+.swag {
+        display: none;
+}
  
-.background {
+.background-mobile {
     width: 100%;
+    height: 100%;
 }
 
-.dodads {
+.dodads-mobile {
+    display: inline-block;
     position: absolute;
     z-index: 1;
     width: 100%;
+    height: 100%;
     top: 80px;
 }
+.dodads-desktop {
+    display: none;
+}
 
-.logo-desktop {
+.logo-mobile {
+    display: inline-block;
     position: absolute;
     z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: 80%;
     top:0;
-    height: 70%;
-    margin-left: 100px;
+    height: 100%;
+    margin-left: 60px;
+}
+.logo-desktop{
+    display: none;
 }
 
 .scrolling {
@@ -88,7 +87,7 @@ header {
     border-radius: 100%;
     width: 200px;
     height: 200px;
-    position: relative;
+    position: fixed;
     z-index: 7;
     display: flex;
     flex-direction: column;
@@ -104,5 +103,74 @@ header {
 }
 
 
-@media media-type and (min-width: 600px) {
+@media screen and (min-width: 600px) {
+
+    /* buttons */
+    .swag {
+        display: inline-block;
+        width: 90px;
+        border-radius: 0;
+        background-color: #ffffff;
+        border-top: 0px solid #000000;
+        border-bottom: 0px solid #000000;
+        border-left: 5px solid #000000;
+        border-right: 0px solid #000000;
+        height: 70px;
+        margin: 0;
+    }
+
+    .quicklinks {
+        display: inline-block;
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+    }
+
+    .link {
+        margin-right: 15px;
+    }
+    
+    .hamburger-menu {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: none;
+    }
+    .logo-desktop{
+        display: inline-block;
+        position: absolute;
+        z-index: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        top:0;
+        height: 70%;
+        margin-left: 100px;
+    }
+
+    .background-mobile {
+        height: 800px;
+    }
+  
+    .background-mobile img {
+        content: url('background.svg');
+        width: 100%;
+    }
+
+   .dodads-mobile {
+        display: none;
+    }
+    .dodads-desktop {
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        top: 0;
+        margin-top: 78px;
+    }
+    .scrolling {
+        transform: translate(-50%, -118%);
+    }
 }
